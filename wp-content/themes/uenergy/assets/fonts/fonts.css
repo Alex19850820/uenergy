@@ -1,0 +1,29 @@
+@font-face {
+  font-family: GilroyMedium;
+  src: url("../fonts/Gilroy-Medium.otf");
+}
+
+@font-face {
+  font-family: GilroyExtrabold;
+  src: url("../fonts/Gilroy-Extrabold.otf");
+}
+
+@font-face {
+  font-family: MullerRegular;
+  src: url("../fonts/Fontfabric - MullerRegular.otf");
+}
+
+@font-face {
+  font-family: MullerExtraBold;
+  src: url("../fonts/Fontfabric - MullerExtraBold.otf");
+}
+
+@font-face {
+  font-family: MullerBold;
+  src: url("../fonts/Fontfabric - MullerBold.otf");
+}
+
+@font-face {
+  font-family: MullerMedium;
+  src: url("../fonts/Fontfabric - MullerMedium.otf");
+}
