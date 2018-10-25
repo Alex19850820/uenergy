@@ -11,7 +11,7 @@
 ?>
 <section class="services" id="services">
 	<div class="container container_flex">
-		<h2 class="services-head">Услуги
+		<h2 class="services-head">Наши услуги
 		</h2>
 		<div class="services-block">
 			<div class="services-block__left">
