@@ -9,7 +9,7 @@
  **/
 
 ?>
-<section class="about-slider">
+<section class="about-slider" id="works">
 	<div class="slider-about">
 		<?php foreach ( $atts['slider'] as $slider ):?>
 			<div class="slider-about__item"><img src="<?=$slider['img']['url']?>" alt="" role="presentation"/>
