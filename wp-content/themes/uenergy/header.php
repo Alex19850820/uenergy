@@ -9,6 +9,9 @@
  * @package uenergy
  */
 $contacts = fw_get_db_customizer_option();
+global $wpdb;
+$table_name = $wpdb->prefix . 'pr_files';
+$file = $wpdb->get_results(" SELECT `file` FROM `".$table_name."` WHERE `id` = 1")[0]->file;
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -26,10 +29,10 @@ $contacts = fw_get_db_customizer_option();
 	<header class="header"><img class="image-fon" src="<?php bloginfo('template_url')?>/assets/images/header_fon.png" alt="" role="presentation"/>
 		<div class="container container_flex-column">
 			<div class="social">
-				<a class="social__insta" href="<?=$contacts['instagram']?>">
+				<a target="_blank" class="social__insta" href="<?=$contacts['instagram']?>">
 					<i class="fab fa-instagram"></i>
 				</a>
-				<a class="social__facebook" href="<?=$contacts['facebook']?>">
+				<a target="_blank" class="social__facebook" href="<?=$contacts['facebook']?>">
 					<i class="fab fa-facebook-f"></i>
 				</a>
 			</div>
@@ -42,7 +45,7 @@ $contacts = fw_get_db_customizer_option();
 			<img class="logo" src="<?php bloginfo('template_url')?>/assets/images/logo.png" alt="" role="presentation"/>
 			<h1 class="logo-head">Энергия, которая Нас объединяет
 			</h1>
-			<a class="btn header-btn" href="<?php bloginfo('template_url')?>/assets/images/Prezent_YuE.pdf" target="_blank">Скачать презентацию в формате PDF
+			<a class="btn header-btn" href="<?php bloginfo('template_url')?>/includes/uploads/<?=$file?>" target="_blank">Скачать презентацию в формате PDF
 			</a>
 			<div class="contacts">
 				<p class="contacts__phone"><?=$contacts['phone']?>

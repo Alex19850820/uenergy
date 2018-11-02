@@ -201,3 +201,25 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/*Добавляем алмин страницу*/
+add_action('admin_menu', function(){
+	add_menu_page( 'Страница импорта Презентаций', 'Импорт Презентаций', 'manage_options', 'site-options', 'add_my_setting', '', 75 );
+} );
+
+// функция отвечает за вывод страницы настроек
+// подробнее смотрите API Настроек: http://wp-kama.ru/id_3773/api-optsiy-nastroek.html
+function add_my_setting(){
+	?>
+	<div class="wrap">
+		<h2><?php echo get_admin_page_title() ?></h2>
+		
+		<?php
+		// settings_errors() не срабатывает автоматом на страницах отличных от опций
+		if( get_current_screen()->parent_base !== 'options-general' )
+			settings_errors('название_опции');
+		?>
+		<?php require get_template_directory() . '/includes/loadfile.php';?>
+	</div>
+	<?php
+	
+}

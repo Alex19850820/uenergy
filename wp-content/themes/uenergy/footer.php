@@ -9,6 +9,9 @@
  * @package uenergy
  */
 $contacts = fw_get_db_customizer_option();
+global $wpdb;
+$table_name = $wpdb->prefix . 'pr_files';
+$file = $wpdb->get_results(" SELECT `file` FROM `".$table_name."` WHERE `id` = 1")[0]->file;
 ?>
 <div class="map" id="contacts"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2865.64884131199!2d37.64121031817786!3d55.76705049155243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a64754707ab%3A0x5b5b601539d9f296!2z0JDRgNCz0L4g0JTQstC10YDQuA!5e1!3m2!1sru!2sua!4v1540370124980" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 </div>
@@ -23,17 +26,17 @@ $contacts = fw_get_db_customizer_option();
 				</div>
 			</div>
 			<div class="footer__item footer__center">
-				<a class="btn" href="<?php bloginfo('template_url')?>/assets/images/Prezent_YuE.pdf" target="_blank">
+				<a class="btn" href="<?php bloginfo('template_url')?>/includes/uploads/<?=$file?>" target="_blank">
 					Скачать презентацию в формате PDF
 				</a>
 				<span class="footer__phone"><?=$contacts['phone']?></span>
 				<span class="footer__address"><?=$contacts['address']?></span>
 				<div class="footer__social">
 					<span>Мы в соц. сетях:</span>
-					<a class="footer__social-item" href="<?=$contacts['instagram']?>">
+					<a target="_blank" class="footer__social-item" href="<?=$contacts['instagram']?>">
 						<i class="fab fa-instagram"></i>
 					</a>
-					<a class="footer__social-item" href="<?=$contacts['facebook']?>">
+					<a target="_blank" class="footer__social-item" href="<?=$contacts['facebook']?>">
 						<i class="fab fa-facebook-f"></i>
 					</a>
 				</div>
