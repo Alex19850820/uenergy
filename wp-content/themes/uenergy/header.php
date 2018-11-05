@@ -48,8 +48,9 @@ $file = $wpdb->get_results(" SELECT `file` FROM `".$table_name."` WHERE `id` = 1
 			<a class="btn header-btn" href="<?php bloginfo('template_url')?>/includes/uploads/<?=$file?>" target="_blank">Скачать презентацию в формате PDF
 			</a>
 			<div class="contacts">
-				<p class="contacts__phone"><?=$contacts['phone']?>
-				</p>
+				<a href="tel:<?=$contacts['phone']?>" style="color: #ffffff; text-decoration: none" class="contacts__phone">
+					<?=$contacts['phone']?>
+				</a>
 				<p class="contacts__addr"><?=$contacts['address']?>
 				</p>
 			</div>

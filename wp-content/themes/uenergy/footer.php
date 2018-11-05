@@ -29,7 +29,9 @@ $file = $wpdb->get_results(" SELECT `file` FROM `".$table_name."` WHERE `id` = 1
 				<a class="btn" href="<?php bloginfo('template_url')?>/includes/uploads/<?=$file?>" target="_blank">
 					Скачать презентацию в формате PDF
 				</a>
-				<span class="footer__phone"><?=$contacts['phone']?></span>
+				<a href="tel:<?=$contacts['phone']?>" style="color: #ffffff; text-decoration: none" class="contacts__phone">
+					<?=$contacts['phone']?>
+				</a>
 				<span class="footer__address"><?=$contacts['address']?></span>
 				<div class="footer__social">
 					<span>Мы в соц. сетях:</span>
